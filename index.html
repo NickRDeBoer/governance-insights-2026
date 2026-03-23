@@ -6,7 +6,7 @@
 <title>2026 Board Governance Insights — OnBoard</title>
 <meta name="description" content="Original research from 387 board leaders reveals governance's strategic blind spot — and what it takes to fix it.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Lora:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
 :root {
@@ -36,7 +36,6 @@ body {
   overflow-x: hidden;
 }
 
-/* NAV */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(20, 20, 45, 0.95);
@@ -56,7 +55,6 @@ body {
 }
 .nav-links a:hover { color: var(--purple-light); }
 
-/* HERO */
 .hero {
   min-height: 100vh; display: flex; flex-direction: column;
   justify-content: center; align-items: center; text-align: center;
@@ -79,7 +77,7 @@ body {
   text-transform: uppercase; color: var(--purple-light); margin-bottom: 1.5rem;
 }
 .hero h1 {
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Lato', -apple-system, sans-serif;
   font-size: clamp(2.2rem, 5vw, 3.6rem);
   line-height: 1.15; margin-bottom: 1.5rem; font-weight: 700;
 }
@@ -108,7 +106,6 @@ body {
   60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* SECTIONS */
 section { padding: 5rem 2rem; max-width: 960px; margin: 0 auto; }
 section.wide { max-width: 1100px; }
 section.dark { max-width: 100%; background: var(--dark-bg); color: #fff; }
@@ -123,7 +120,7 @@ section.light-bg .inner { max-width: 960px; margin: 0 auto; }
 section.dark .section-label { color: var(--purple-light); }
 
 h2 {
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Lato', -apple-system, sans-serif;
   font-size: clamp(1.6rem, 3.5vw, 2.3rem);
   color: var(--navy); margin-bottom: 1rem; line-height: 1.2; font-weight: 700;
 }
@@ -138,7 +135,6 @@ section.dark h3 { color: var(--purple-light); }
 p { margin-bottom: 1rem; font-size: 1rem; font-weight: 400; }
 p.lead { font-size: 1.08rem; color: var(--gray); font-weight: 300; line-height: 1.75; }
 
-/* THESIS BLOCK */
 .thesis {
   background: var(--light-bg); border-radius: 12px; padding: 2rem 2.25rem;
   margin: 2.5rem 0; border: 1px solid var(--border);
@@ -147,7 +143,6 @@ p.lead { font-size: 1.08rem; color: var(--gray); font-weight: 300; line-height: 
 .thesis p { font-size: 0.95rem; margin-bottom: 0.75rem; }
 .thesis p:last-child { margin-bottom: 0; }
 
-/* CHARTS */
 .chart-container {
   position: relative; width: 100%; margin: 2rem 0;
   background: #fff; border-radius: 12px; padding: 1.5rem;
@@ -189,6 +184,7 @@ section.dark .callout strong { color: #fff; }
   border: 1px solid var(--border); font-style: italic; font-size: 0.9rem;
   color: var(--gray); position: relative;
 }
+section.dark .quote-card { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
 .quote-card::before {
   content: '\201C'; font-size: 2.5rem; color: var(--purple-light);
   position: absolute; top: 0.25rem; left: 0.75rem; line-height: 1; font-style: normal;
@@ -200,13 +196,12 @@ section.dark .callout strong { color: #fff; }
 .trust-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 2rem 0; }
 .trust-item {
   display: flex; align-items: center; gap: 0.75rem;
-  background: var(--light-bg); border-radius: 8px; padding: 0.85rem 1rem;
-  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.06); border-radius: 8px; padding: 0.85rem 1rem;
+  border: 1px solid rgba(255,255,255,0.1);
 }
-.trust-pct { font-size: 1.4rem; font-weight: 900; color: var(--purple); min-width: 55px; }
-.trust-label { font-size: 0.85rem; color: var(--text); font-weight: 400; }
+.trust-pct { font-size: 1.4rem; font-weight: 900; color: var(--purple-light); min-width: 55px; }
+.trust-label { font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 400; }
 
-/* insight connector callout */
 .insight-connector {
   background: linear-gradient(135deg, rgba(99,89,222,0.08), rgba(251,0,174,0.06));
   border: 1px solid var(--border); border-radius: 12px;
@@ -214,8 +209,25 @@ section.dark .callout strong { color: #fff; }
 }
 .insight-connector strong { color: var(--purple); }
 section.dark .insight-connector { background: rgba(172,158,255,0.08); border-color: rgba(255,255,255,0.1); }
+section.dark .insight-connector strong { color: var(--purple-light); }
 
-/* CTA */
+.sequence-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2.5rem 0;
+}
+.sequence-card {
+  background: var(--light-bg); border-radius: 12px; padding: 1.75rem;
+  border: 1px solid var(--border); text-align: center;
+}
+.sequence-card .step-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 50%; background: var(--purple);
+  color: #fff; font-weight: 900; font-size: 1rem; margin-bottom: 0.75rem;
+}
+.sequence-card h4 {
+  font-size: 1rem; font-weight: 900; color: var(--navy); margin-bottom: 0.5rem;
+}
+.sequence-card p { font-size: 0.85rem; color: var(--gray); margin: 0; }
+
 .cta-section {
   text-align: center; padding: 5rem 2rem;
   background: linear-gradient(135deg, var(--purple), var(--purple-dark)); color: #fff;
@@ -253,6 +265,7 @@ footer a { color: var(--purple-light); text-decoration: none; }
   .hero-stats { gap: 1.5rem; }
   .hero-stat .number { font-size: 2.2rem; }
   .two-charts, .quote-grid, .trust-grid { grid-template-columns: 1fr; }
+  .sequence-grid { grid-template-columns: 1fr; }
   section { padding: 3rem 1.25rem; }
   .stat-row { grid-template-columns: repeat(2, 1fr); }
 }
@@ -263,12 +276,10 @@ footer a { color: var(--purple-light); text-decoration: none; }
 <nav class="nav" id="nav">
   <a href="#" class="nav-logo">OnBoard</a>
   <ul class="nav-links">
-    <li><a href="#thesis-section">The Thesis</a></li>
-    <li><a href="#gap">The Blind Spot</a></li>
-    <li><a href="#barriers">Root Cause</a></li>
-    <li><a href="#maturity">Maturity</a></li>
-    <li><a href="#ai">AI & the Board</a></li>
-    <li><a href="#trust">Trust</a></li>
+    <li><a href="#divide">The Divide</a></li>
+    <li><a href="#fragmentation">Fragmentation</a></li>
+    <li><a href="#ai">AI Readiness</a></li>
+    <li><a href="#window">12-Month Window</a></li>
   </ul>
 </nav>
 
@@ -277,23 +288,23 @@ footer a { color: var(--purple-light); text-decoration: none; }
   <div class="hero-content fade-in">
     <p class="hero-eyebrow">Original Research &middot; March 2026</p>
     <h1>The Strategic Blind Spot<br>in Board Governance</h1>
-    <p class="subtitle">Boards have solved the operational basics. Meeting logistics, material distribution, attendance tracking&thinsp;&mdash;&thinsp;those are manageable. What boards still cannot measure are the things that determine whether governance actually works: director engagement, strategic follow-through, and whether the right people are at the table.</p>
+    <p class="subtitle">Operational governance is solved. Meeting logistics, material distribution, attendance tracking&thinsp;&mdash;&thinsp;boards have those covered. What boards still cannot measure are the areas that determine whether governance actually works: director engagement, strategic follow-through, board composition, and risk oversight.</p>
     <div class="hero-stats">
       <div class="hero-stat">
         <span class="number" data-count="387">0</span>
         <span class="label">Board leaders surveyed</span>
       </div>
       <div class="hero-stat">
-        <span class="number" data-count="4">0</span>
-        <span class="label">Governance blind spots</span>
-      </div>
-      <div class="hero-stat">
         <span class="number" data-count="51" data-suffix="%">0</span>
-        <span class="label">Cite fragmentation</span>
+        <span class="label">Cite fragmented data</span>
       </div>
       <div class="hero-stat">
         <span class="number" data-count="43" data-suffix="%">0</span>
         <span class="label">Want AI to help</span>
+      </div>
+      <div class="hero-stat">
+        <span class="number" data-count="72" data-suffix="%">0</span>
+        <span class="label">Maturing within 12 mo.</span>
       </div>
     </div>
   </div>
@@ -307,21 +318,14 @@ footer a { color: var(--purple-light); text-decoration: none; }
 <!-- THESIS -->
 <section id="thesis-section">
   <div class="fade-in">
-    <p class="section-label">The Thesis</p>
-    <h2>Three Findings That Connect</h2>
+    <p class="section-label">The Story</p>
+    <h2>387 Board Leaders. One Structural Problem.</h2>
   </div>
 
   <div class="thesis fade-in">
-    <h3>1. The Blind Spot is real and universal.</h3>
-    <p>Four governance areas sit in the same quadrant: high importance, high difficulty. Director engagement, strategy progress, board composition, and risk oversight. Every role agrees. CEOs, directors, administrators, and general counsels all rank strategy progress as their single hardest area to measure (41&ndash;44%). The operational layer of governance is solved. The strategic layer is flying blind.</p>
-  </div>
-  <div class="thesis fade-in">
-    <h3>2. Fragmentation is the root cause.</h3>
-    <p>51% of respondents say governance insights exist but are scattered across people, files, and systems. Another 29% say no one owns follow-through. The data is there. The system to use it is missing. And boards that cite fragmentation as their top barrier are 24% more likely to want AI (47% high interest vs. 38%).</p>
-  </div>
-  <div class="thesis fade-in">
-    <h3>3. AI adoption follows maturity. You cannot skip steps.</h3>
-    <p>65% of boards already using AI for governance are Advanced-maturity. Average AI interest climbs steadily from 3.0 (Informal) to 3.43 (Advanced). The boards that built the foundation&thinsp;&mdash;&thinsp;structured workflows, centralized records, consistent reporting&thinsp;&mdash;&thinsp;are the ones positioned to benefit from AI. Everyone else needs the foundation first.</p>
+    <p>Board governance has a structural problem masquerading as a data problem. Boards at every level generate governance data&thinsp;&mdash;&thinsp;meeting notes, committee reports, strategy updates, compliance reviews. What they lack is a system that connects those inputs into a picture anyone can act on.</p>
+    <p>The result is a measurability divide: operational areas like meeting logistics and material quality are trackable and tracked. Strategic areas&thinsp;&mdash;&thinsp;director engagement, strategy follow-through, board composition, risk oversight&thinsp;&mdash;&thinsp;are the ones that actually determine whether a board is effective, and they are functionally invisible.</p>
+    <p>The divide persists because information is fragmented across people, files, and systems, and it gets <em>worse</em>, not better, as boards try to mature. AI offers a path forward, but only for boards that have already centralized the record. For everyone else, the fix starts with the plumbing.</p>
   </div>
 
   <div class="fade-in">
@@ -342,13 +346,13 @@ footer a { color: var(--purple-light); text-decoration: none; }
   </div>
 </section>
 
-<!-- THE BLIND SPOT -->
-<section class="dark" id="gap">
+<!-- PART 1: THE MEASURABILITY DIVIDE -->
+<section class="dark" id="divide">
   <div class="inner">
     <div class="fade-in">
-      <p class="section-label">Finding One</p>
-      <h2>The Governance Blind Spot</h2>
-      <p>Respondents rated nine governance areas on two dimensions: how important each is to measure, and how hard it is to measure well. Four areas landed in the same dangerous quadrant&thinsp;&mdash;&thinsp;high on both.</p>
+      <p class="section-label">Part One</p>
+      <h2>The Measurability Divide</h2>
+      <p>Governance spans nine distinct areas. This survey asked board leaders to rate each on two dimensions: how important it is to measure, and how hard it is to measure well. The results split cleanly into two tiers.</p>
     </div>
 
     <div class="chart-container fade-in">
@@ -357,11 +361,41 @@ footer a { color: var(--purple-light); text-decoration: none; }
     </div>
 
     <div class="callout fade-in">
-      <strong>Four areas define the blind spot:</strong> Director Engagement (37% important, 34% hardest), Strategy Progress (32% / 37%), Board Composition (32% / 28%), and Risk &amp; Compliance (30% / 33%). These are the governance questions that determine board effectiveness, and they are the hardest to answer.
+      <strong>The solved tier:</strong> Board meetings (63% easy, 7% hard) and material quality (58% easy, 14% hard). These are operational mechanics&thinsp;&mdash;&thinsp;table stakes most boards can answer today.<br><br>
+      <strong>The unsolved tier:</strong> Director engagement, board composition, risk &amp; compliance, and strategy progress all score high on importance and high on difficulty. These are the areas that determine whether a board is actually governing.
     </div>
 
-    <h3 class="fade-in">Every role agrees on what is hardest</h3>
-    <p class="fade-in" style="color: rgba(255,255,255,0.75);">Strategy progress is rated the single hardest area to measure by every role in the survey. But each role has a secondary pain that reflects their vantage point.</p>
+    <h3 class="fade-in">The overlap problem</h3>
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">The people who care most about these areas are the same individuals who cannot measure them. That is not two populations&thinsp;&mdash;&thinsp;it is one.</p>
+
+    <div class="stat-row fade-in">
+      <div class="stat-card">
+        <div class="number">74%</div>
+        <div class="label">Risk &amp; Compliance overlap</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">72%</div>
+        <div class="label">Engagement overlap</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">71%</div>
+        <div class="label">Strategy overlap</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">33%</div>
+        <div class="label">Material Quality overlap</div>
+      </div>
+    </div>
+
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">274 respondents provided open-ended answers about where improved governance insights would create the most value. Almost nobody asked for more data or more reports. The request, repeatedly, was for something that connects what already exists and ensures someone acts on it.</p>
+
+    <div class="chart-container fade-in">
+      <p class="chart-title">Open-ended Themes (274 responses coded by keyword)</p>
+      <canvas id="chartThemes"></canvas>
+    </div>
+
+    <h3 class="fade-in">Every role sees it from their chair</h3>
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">Strategy progress is rated the single hardest area to measure by every role in the survey&thinsp;&mdash;&thinsp;directors (43%), CEOs (41%), administrators (41%), and corporate secretaries (44%). But each role carries a secondary pain that reflects their vantage point.</p>
 
     <div class="chart-container fade-in">
       <p class="chart-title">Hardest to Measure by Role (% within each role selecting area)</p>
@@ -369,107 +403,81 @@ footer a { color: var(--purple-light); text-decoration: none; }
     </div>
 
     <div class="insight-connector fade-in">
-      <strong>The pattern:</strong> Administrators and CEOs struggle most with director engagement and board composition&thinsp;&mdash;&thinsp;the people and participation layer. General counsels uniquely flag risk and compliance at 47%, the highest of any role-area combination. Everyone sees the blind spot from their chair. The common thread is that none of them have a system that makes these areas measurable.
+      <strong>The pattern:</strong> General counsels uniquely flag risk and compliance at 47%&thinsp;&mdash;&thinsp;the highest role-area combination in the dataset. They own the liability and feel the gap most acutely. Administrators spike on board composition (35%), because terms, onboarding, and skills tracking live in their heads. Directors and CEOs cluster together on engagement: they can feel when participation is uneven but have no data to back the feeling.
     </div>
   </div>
 </section>
 
-<!-- ROOT CAUSE: BARRIERS -->
-<section id="barriers">
-  <div class="fade-in">
-    <p class="section-label">Finding Two</p>
-    <h2>Fragmentation Is the Root Cause</h2>
-    <p class="lead">The blind spot persists because governance insights are scattered. Board materials live in email threads, shared drives, personal notes, and committee reports. No single system assembles the full picture, and no one person owns follow-through.</p>
-  </div>
-
-  <div class="chart-container fade-in">
-    <p class="chart-title">Barriers to Useful Governance Insights (% of respondents)</p>
-    <canvas id="chartBarriers"></canvas>
-  </div>
-
-  <div class="stat-row fade-in">
-    <div class="stat-card">
-      <div class="number">51%</div>
-      <div class="label">Fragmented / manual</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">29%</div>
-      <div class="label">No owner</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">21%</div>
-      <div class="label">Hard to locate</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">20%</div>
-      <div class="label">Not actionable</div>
-    </div>
-  </div>
-
-  <div class="insight-connector fade-in">
-    <strong>Fragmentation drives AI appetite.</strong> Boards that cited "fragmented/manual" as a barrier have 47% high AI interest, compared to 38% among those who did not. The people who feel the structural problem most acutely are the most eager for AI to help solve it.
-  </div>
-
-  <h3 class="fade-in">In Their Own Words</h3>
-  <div class="quote-grid fade-in">
-    <div class="quote-card"><p>Clearer, more timely information would allow the board to spend less time on background issues and more time on strategic discussion.</p></div>
-    <div class="quote-card"><p>It would create a clear, actionable process that identifies key outcomes and who is responsible. Gaps in director skillset would be identified and filled.</p></div>
-    <div class="quote-card"><p>With centralized assistance, we would be less dependent on staff to collect and analyze data.</p></div>
-    <div class="quote-card"><p>Risk and decision quality would improve. Recognition by faster and more effective decision making, while having a better view on risks.</p></div>
-  </div>
-
-  <h3 class="fade-in">What Respondents Say Would Improve Most</h3>
-  <div class="chart-container fade-in">
-    <p class="chart-title">Open-ended Themes (274 responses coded by keyword)</p>
-    <canvas id="chartThemes"></canvas>
-  </div>
-  <p class="fade-in" style="font-size: 0.9rem; color: var(--gray);">Decision quality and follow-through dominate. Boards are not asking for more data. They are asking for a system that turns data into action and makes sure someone follows through.</p>
-</section>
-
-<!-- MATURITY -->
-<section class="light-bg" id="maturity">
+<!-- PART 2: THE FRAGMENTATION TRAP -->
+<section class="light-bg" id="fragmentation">
   <div class="inner">
     <div class="fade-in">
-      <p class="section-label">Finding Three</p>
-      <h2>The 12-Month Maturity Window</h2>
-      <p class="lead">72% of boards expect to reach Developing or Advanced maturity within the next year, up from 53% today. The ambition is there. Whether they reach it depends on whether they get the structural foundation in place.</p>
+      <p class="section-label">Part Two</p>
+      <h2>The Fragmentation Trap</h2>
+      <p class="lead">The blind spot persists not because boards lack data, but because the data is scattered. Board materials live in email threads, shared drives, personal notes, and committee reports. No single system assembles the full picture.</p>
     </div>
 
     <div class="chart-container fade-in">
-      <p class="chart-title">Governance Maturity: Today vs. 12-Month Expectation</p>
-      <canvas id="chartMaturity"></canvas>
+      <p class="chart-title">Barriers to Useful Governance Insights (% of respondents)</p>
+      <canvas id="chartBarriers"></canvas>
     </div>
 
     <div class="stat-row fade-in">
       <div class="stat-card">
-        <div class="number">53%</div>
-        <div class="label">Developing or Advanced today</div>
+        <div class="number">51%</div>
+        <div class="label">Fragmented / manual</div>
       </div>
       <div class="stat-card">
-        <div class="number">72%</div>
-        <div class="label">Expect to be there in 12 mo.</div>
+        <div class="number">29%</div>
+        <div class="label">No owner</div>
       </div>
       <div class="stat-card">
-        <div class="number">+19pp</div>
-        <div class="label">Upward shift</div>
+        <div class="number">21%</div>
+        <div class="label">Hard to locate</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">20%</div>
+        <div class="label">Not actionable</div>
       </div>
     </div>
 
-    <p class="fade-in">The biggest movement happens at the Developing tier, which absorbs boards currently at Basic and Informal levels. Advanced stays roughly flat. Boards understand that reaching structured, action-oriented governance requires more than good intentions.</p>
+    <h3 class="fade-in">Fragmentation peaks where you would not expect it</h3>
+    <p class="fade-in">The more interesting finding is <em>where</em> fragmentation hits hardest. It gets worse as boards mature through the middle tiers, peaking at the Developing stage.</p>
+
+    <div class="chart-container fade-in">
+      <p class="chart-title">Fragmentation Rate by Governance Maturity</p>
+      <canvas id="chartFragByMaturity"></canvas>
+    </div>
+
+    <div class="callout fade-in">
+      <strong>The trap:</strong> Informal boards have little to fragment&thinsp;&mdash;&thinsp;they run on memory. As boards add structure, they create more documents, more reports, more spreadsheets, all spread across more systems. By the Developing stage, they have more pieces but no puzzle box. Only Advanced boards break through, having centralized enough to assemble the picture. And 63% of Basic boards expect to reach Developing within 12 months&thinsp;&mdash;&thinsp;heading straight for the peak.
+    </div>
+
+    <h3 class="fade-in">Barriers evolve with maturity</h3>
+    <p class="fade-in"><strong>Informal boards</strong> struggle with "not captured at all" (29%)&thinsp;&mdash;&thinsp;they do not even have the data to fragment. <strong>Basic and Developing boards</strong> are deep in fragmentation (60&ndash;65%) and lack of ownership (33&ndash;34%). <strong>Advanced boards</strong> still cite fragmentation (44%), but their secondary barriers shift to "hard to locate" and "not actionable"&thinsp;&mdash;&thinsp;they have centralized enough to move past the basics, but making insights findable in the moment of decision remains a challenge.</p>
 
     <div class="insight-connector fade-in">
-      <strong>This matters for AI adoption.</strong> The 29 respondents already using AI for governance are 65% Advanced-maturity. AI adoption follows maturity because AI needs a governed environment to operate in&thinsp;&mdash;&thinsp;centralized records, structured workflows, clear ownership. Without that foundation, there is nothing for AI to work with.
+      <strong>Fragmentation drives AI appetite.</strong> Boards that cited "fragmented/manual" as a barrier have 47% high AI interest, compared to 38% among those who did not. The people who feel the structural problem most acutely are the most eager for AI to help solve it.
     </div>
+
+    <h3 class="fade-in">In Their Own Words</h3>
+    <div class="quote-grid fade-in">
+      <div class="quote-card"><p>A checklist of what matters. Follow-up by leaders. Clarity of purpose.</p></div>
+      <div class="quote-card"><p>Accountability for engagement and decision-making. Results that show in an increase of initiatives accomplished.</p></div>
+      <div class="quote-card"><p>With centralized assistance, we would be less dependent on staff to collect and analyze data.</p></div>
+      <div class="quote-card"><p>Risk and decision quality would improve. Faster and more effective decision making, while having a better view on risks.</p></div>
+    </div>
+    <p class="fade-in" style="font-size: 0.88rem; color: var(--gray);">The first two quotes illustrate the maturity divide in tone. Informal boards want scaffolding. Advanced boards want the strategic layer on top of it. Both use the same words&thinsp;&mdash;&thinsp;"follow-through," "decision quality"&thinsp;&mdash;&thinsp;but the context is different.</p>
   </div>
 </section>
 
-<!-- AI -->
+<!-- PART 3: AI AS ACCELERANT -->
 <section class="dark" id="ai">
   <div class="inner">
     <div class="fade-in">
-      <p class="section-label">Finding Four</p>
-      <h2>AI Readiness: Interest, Priorities, and Conditions</h2>
-      <p>43% of board leaders express high interest in AI-generated governance insights. But interest varies sharply by industry, role, and maturity. The data reveals who is ready, who is watching, and what everyone requires before saying yes.</p>
+      <p class="section-label">Part Three</p>
+      <h2>AI as Accelerant, Not Shortcut</h2>
+      <p>43% of board leaders rate their interest in AI-generated governance insights at 4 or 5 out of 5. Another 27% sit at 3&thinsp;&mdash;&thinsp;open-minded but unconvinced. Only 12% say they have no interest at all. But averages obscure the real story. AI interest is sharply segmented.</p>
     </div>
 
     <div class="two-charts fade-in">
@@ -484,12 +492,15 @@ footer a { color: var(--purple-light); text-decoration: none; }
     </div>
 
     <div class="callout fade-in">
-      <strong>Corporate boards are the hungriest for AI.</strong> 62% of corporate respondents rate AI interest 4-5, compared to 53% in education, 46% in healthcare, 38% in nonprofits, and just 32% in financial services. The financial services result is counterintuitive&thinsp;&mdash;&thinsp;these boards may feel they already have structured reporting and see less urgency.
+      <strong>Corporate boards are the hungriest for AI.</strong> 62% of corporate respondents rate AI interest 4&ndash;5, compared to 53% in education, 46% in healthcare, 38% in nonprofits, and 32% in financial services. Financial services boards may feel they already have structured reporting and see less urgency.
     </div>
+
+    <h3 class="fade-in">AI interest follows maturity</h3>
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">The spread is modest, but the direction is consistent: boards that have invested in governance infrastructure are the ones positioned to get value from AI. 65% of the 29 respondents already using AI for governance are Advanced-maturity. AI adoption does not happen at the bottom of the maturity curve.</p>
 
     <div class="two-charts fade-in">
       <div class="chart-container">
-        <p class="chart-title">AI Interest Rises With Maturity</p>
+        <p class="chart-title">AI Interest by Maturity (avg of 5)</p>
         <canvas id="chartAiByMaturity"></canvas>
       </div>
       <div class="chart-container">
@@ -498,12 +509,10 @@ footer a { color: var(--purple-light); text-decoration: none; }
       </div>
     </div>
 
-    <div class="insight-connector fade-in">
-      <strong>Corporate secretaries and general counsels are the most AI-interested role</strong> (avg 3.45 of 5), despite being the group most focused on risk and compliance. They want AI to help with the areas they struggle to track manually. Board administrators, meanwhile, are the least interested (3.14)&thinsp;&mdash;&thinsp;suggesting AI needs to prove it makes their life easier, not harder.
-    </div>
+    <p class="fade-in" style="color: rgba(255,255,255,0.75); font-size: 0.9rem;">Corporate secretaries and general counsels show the highest average interest (3.45)&thinsp;&mdash;&thinsp;they bear the largest burden of the blind spot. Board administrators sit lowest (3.14), suggesting AI needs to prove it reduces their workload. These are directional differences within a narrow band, not dramatic divides.</p>
 
-    <h3 class="fade-in">What Boards Want AI to Do First</h3>
-    <p class="fade-in" style="color: rgba(255,255,255,0.7);">Respondents ranked nine AI use cases from most to least urgent. The top three mirror the governance blind spot exactly.</p>
+    <h3 class="fade-in">What boards want AI to do first</h3>
+    <p class="fade-in" style="color: rgba(255,255,255,0.7);">Respondents ranked nine AI use cases by priority. The top three mirror the governance blind spot exactly.</p>
 
     <div class="chart-container fade-in">
       <p class="chart-title">AI Priority Ranking (weighted score, higher = more urgent)</p>
@@ -511,56 +520,102 @@ footer a { color: var(--purple-light); text-decoration: none; }
     </div>
 
     <div class="callout fade-in">
-      <strong>The priorities confirm the thesis.</strong> Board skills &amp; succession, action follow-through, and strategy tracking are the top three AI priorities. These are the same areas that sit in the blind spot quadrant&thinsp;&mdash;&thinsp;important, hard to measure, and plagued by fragmentation. Boards want AI to close the gap they have identified but cannot close manually.
+      <strong>The priorities confirm the thesis.</strong> Board skills &amp; succession, action follow-through, and strategy tracking are the top three AI priorities&thinsp;&mdash;&thinsp;the same areas that sit in the blind spot quadrant. Boards want AI to close the gap they have identified but cannot close manually.
     </div>
+
+    <h3 class="fade-in">Trust is not an adoption curve</h3>
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">Before boards adopt AI, they require assurances. The average respondent selected four trust requirements. And the data shows something important: trust requirements do not relax with maturity. Advanced boards demand the same guardrails as everyone else.</p>
+
+    <div class="trust-grid fade-in" id="trustGrid"></div>
+
+    <div class="stat-row fade-in">
+      <div class="stat-card">
+        <div class="number">~4</div>
+        <div class="label">Avg trust requirements (all levels)</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">56%</div>
+        <div class="label">Require data privacy</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">54%</div>
+        <div class="label">Require human review</div>
+      </div>
+      <div class="stat-card">
+        <div class="number">51%</div>
+        <div class="label">Require audit trail</div>
+      </div>
+    </div>
+
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">Privacy, human review, and audit trails are not training wheels that boards shed as they gain confidence. They are the permanent architecture of boardroom trust. Any AI that enters governance earns its place by meeting these standards. Every time.</p>
+
+    <h3 class="fade-in">AI Expectations Within 12 Months</h3>
+    <div class="chart-container fade-in">
+      <p class="chart-title">Organizational Expectation for AI in Governance</p>
+      <canvas id="chartAiExpectation"></canvas>
+    </div>
+
+    <p class="fade-in" style="color: rgba(255,255,255,0.75);">14% are already using AI or actively planning to within the year. Another 31% say adoption is likely but have no active plan. The adoption curve is early. The direction is set.</p>
   </div>
 </section>
 
-<!-- TRUST -->
-<section id="trust">
+<!-- PART 4: THE 12-MONTH WINDOW -->
+<section id="window">
   <div class="fade-in">
-    <p class="section-label">Finding Five</p>
-    <h2>Trust Requirements for AI in Governance</h2>
-    <p class="lead">Boards apply the same standards to AI that they apply to every other governance process: oversight, auditability, and control. And the data shows something important&thinsp;&mdash;&thinsp;advanced boards do not trust AI more easily. They demand the same guardrails as everyone else.</p>
+    <p class="section-label">Part Four</p>
+    <h2>The 12-Month Window</h2>
+    <p class="lead">72% of boards expect to reach Developing or Advanced maturity within the next year, up from 53% today. That is a +19 percentage point shift. The ambition is real. Whether boards reach it depends on the foundation they lay now.</p>
   </div>
 
-  <div class="trust-grid fade-in" id="trustGrid"></div>
+  <div class="chart-container fade-in">
+    <p class="chart-title">Governance Maturity: Today vs. 12-Month Expectation</p>
+    <canvas id="chartMaturity"></canvas>
+  </div>
 
   <div class="stat-row fade-in">
     <div class="stat-card">
-      <div class="number">~4</div>
-      <div class="label">Avg trust requirements (all maturity levels)</div>
+      <div class="number">53%</div>
+      <div class="label">Developing or Advanced today</div>
     </div>
     <div class="stat-card">
-      <div class="number">56%</div>
-      <div class="label">Require data privacy</div>
+      <div class="number">72%</div>
+      <div class="label">Expect to be there in 12 mo.</div>
     </div>
     <div class="stat-card">
-      <div class="number">54%</div>
-      <div class="label">Require human review</div>
-    </div>
-    <div class="stat-card">
-      <div class="number">51%</div>
-      <div class="label">Require audit trail</div>
+      <div class="number">+19pp</div>
+      <div class="label">Upward shift</div>
     </div>
   </div>
 
-  <p class="fade-in">Informal boards select an average of 4.0 trust requirements. Advanced boards select 4.3. The difference is negligible. Trust is table stakes across the entire maturity spectrum, not an adoption curve that loosens as boards gain confidence. Any AI that enters the boardroom earns its place by meeting the room's standards, not by lowering them.</p>
+  <p class="fade-in">The most aggressive movement is at the Basic tier: 63% expect to reach Developing within the year. They are motivated. And they are headed straight for the fragmentation peak. The question is whether they do it with the same scattered tools that created the blind spot, or whether they lay a centralized foundation first.</p>
 
-  <h3 class="fade-in">AI Expectations Within 12 Months</h3>
-  <div class="chart-container fade-in">
-    <p class="chart-title">Organizational Expectation for AI in Governance</p>
-    <canvas id="chartAiExpectation"></canvas>
+  <h3 class="fade-in">The Sequence</h3>
+  <div class="sequence-grid fade-in">
+    <div class="sequence-card">
+      <div class="step-num">1</div>
+      <h4>Centralize</h4>
+      <p>For Informal and Basic boards: a single system that collects and connects governance information so fragmentation does not worsen as they mature.</p>
+    </div>
+    <div class="sequence-card">
+      <div class="step-num">2</div>
+      <h4>Activate</h4>
+      <p>For Developing boards: turn the data they have already generated into insights that are timely, owned, and connected to action.</p>
+    </div>
+    <div class="sequence-card">
+      <div class="step-num">3</div>
+      <h4>Add Intelligence</h4>
+      <p>For Advanced boards: use AI to surface patterns, flag risks, and track follow-through across the full governance record.</p>
+    </div>
   </div>
 
-  <p class="fade-in">14% are already using AI or actively planning to within the year. Another 31% say adoption is likely but have no active plan. The adoption curve is early. The direction is set.</p>
+  <p class="fade-in">Each stage has a different job. All three share a prerequisite: the record has to be in one place.</p>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
   <div class="fade-in">
     <h2>Close the Governance Blind Spot</h2>
-    <p>A single governed platform for board materials, meeting intelligence, engagement tracking, skills management, and closed-loop AI. Every insight stays inside your record. Every output has a source. Every action has an owner.</p>
+    <p>The boards that centralize first will be the ones measuring engagement, strategy, and risk in 12 months. A single governed platform for board materials, meeting intelligence, engagement tracking, and closed-loop AI&thinsp;&mdash;&thinsp;every insight stays inside your record, every output has a source, every action has an owner.</p>
     <a href="https://www.onboardmeetings.com/board-portal/request-demo/" class="cta-btn">Request a Demo</a>
   </div>
 </section>
@@ -663,7 +718,22 @@ new Chart(document.getElementById('chartGap'), {
   }
 });
 
-// Role-specific gaps (NEW)
+new Chart(document.getElementById('chartThemes'), {
+  type: 'bar',
+  data: {
+    labels: ['Decision quality', 'Follow-through', 'Time savings', 'Information quality', 'Strategic alignment', 'Director engagement', 'Risk & compliance', 'Board composition'],
+    datasets: [{ data: [74, 69, 64, 48, 40, 38, 32, 14], backgroundColor: [PURPLE_LIGHT, PURPLE, PINK, TEAL, CORAL, GOLD, GRAY, '#2ECC71'], borderRadius: 6, barPercentage: 0.65 }]
+  },
+  options: {
+    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: 'rgba(255,255,255,0.08)' }, ticks: { color: 'rgba(255,255,255,0.5)' }, title: { display: true, text: 'Mentions', color: 'rgba(255,255,255,0.4)', font: { size: 11 } } },
+      y: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.7)', font: { size: 11, weight: 'bold' } } }
+    }
+  }
+});
+
 new Chart(document.getElementById('chartRoleGaps'), {
   type: 'bar',
   data: {
@@ -698,16 +768,24 @@ new Chart(document.getElementById('chartBarriers'), {
   }
 });
 
-new Chart(document.getElementById('chartThemes'), {
+new Chart(document.getElementById('chartFragByMaturity'), {
   type: 'bar',
   data: {
-    labels: ['Decision quality', 'Follow-through', 'Time savings', 'Information quality', 'Strategic alignment', 'Director engagement', 'Risk & compliance', 'Board composition'],
-    datasets: [{ data: [74, 69, 64, 48, 40, 38, 32, 14], backgroundColor: [PURPLE, PURPLE_LIGHT, PINK, TEAL, CORAL, GOLD, GRAY, '#2ECC71'], borderRadius: 6, barPercentage: 0.65 }]
+    labels: ['Informal', 'Basic', 'Developing', 'Advanced'],
+    datasets: [{
+      label: 'Fragmentation rate',
+      data: [51, 60, 65, 44],
+      backgroundColor: ctx => ctx.dataIndex === 2 ? PINK : PURPLE,
+      borderRadius: 6, barPercentage: 0.55
+    }]
   },
   options: {
-    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: { x: { grid: { display: false }, title: { display: true, text: 'Mentions', font: { size: 11 } } }, y: { grid: { display: false }, ticks: { font: { size: 11, weight: 'bold' } } } }
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y}% cite fragmentation` } } },
+    scales: {
+      x: { grid: { display: false }, ticks: { font: { size: 12, weight: 'bold' } } },
+      y: { grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { callback: v => v + '%' }, title: { display: true, text: '% citing fragmentation as barrier', font: { size: 10 }, color: GRAY } }
+    }
   }
 });
 
@@ -740,7 +818,6 @@ new Chart(document.getElementById('chartAiInterest'), {
   }
 });
 
-// AI by industry (NEW)
 new Chart(document.getElementById('chartAiByIndustry'), {
   type: 'bar',
   data: {
@@ -773,7 +850,6 @@ new Chart(document.getElementById('chartAiByMaturity'), {
   }
 });
 
-// AI by role (NEW)
 new Chart(document.getElementById('chartAiByRole'), {
   type: 'bar',
   data: {
@@ -833,7 +909,10 @@ new Chart(document.getElementById('chartAiExpectation'), {
   options: {
     responsive: true, maintainAspectRatio: false,
     plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => `${ctx.parsed.y}%` } } },
-    scales: { x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 25 } }, y: { grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { callback: v => v + '%' } } }
+    scales: {
+      x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.6)', font: { size: 10 }, maxRotation: 25 } },
+      y: { grid: { color: 'rgba(255,255,255,0.08)' }, ticks: { color: 'rgba(255,255,255,0.5)', callback: v => v + '%' } }
+    }
   }
 });
 </script>
